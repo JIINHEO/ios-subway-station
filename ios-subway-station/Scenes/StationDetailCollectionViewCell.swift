@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+
 final class StationDetailCollectionViewCell: UICollectionViewCell {
     private lazy var lineLabel: UILabel = {
         let label = UILabel()
@@ -46,5 +47,4 @@ final class StationDetailCollectionViewCell: UICollectionViewCell {
         lineLabel.text = "왕십리-한양대방면"
         remainTimeLabel.text = "뚝섬 도착"
     }
-    
 }
