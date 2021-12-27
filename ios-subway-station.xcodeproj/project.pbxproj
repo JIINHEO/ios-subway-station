@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		E874EB20277709760087E922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874EB1F277709760087E922 /* AppDelegate.swift */; };
 		E874EB22277709760087E922 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874EB21277709760087E922 /* SceneDelegate.swift */; };
-		E874EB24277709760087E922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874EB23277709760087E922 /* ViewController.swift */; };
-		E874EB27277709760087E922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E874EB25277709760087E922 /* Main.storyboard */; };
+		E874EB24277709760087E922 /* StationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E874EB23277709760087E922 /* StationSearchViewController.swift */; };
 		E874EB29277709780087E922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E874EB28277709780087E922 /* Assets.xcassets */; };
 		E874EB2C277709780087E922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E874EB2A277709780087E922 /* LaunchScreen.storyboard */; };
+		E8EA466F277997AD00DD4244 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8EA466E277997AD00DD4244 /* SnapKit */; };
+		E8EA46722779981F00DD4244 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E8EA46712779981F00DD4244 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E874EB1C277709760087E922 /* ios-subway-station.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-subway-station.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E874EB1F277709760087E922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E874EB21277709760087E922 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E874EB23277709760087E922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E874EB26277709760087E922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E874EB23277709760087E922 /* StationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchViewController.swift; sourceTree = "<group>"; };
 		E874EB28277709780087E922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E874EB2B277709780087E922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E874EB2D277709780087E922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8EA466F277997AD00DD4244 /* SnapKit in Frameworks */,
+				E8EA46722779981F00DD4244 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +60,20 @@
 			children = (
 				E874EB1F277709760087E922 /* AppDelegate.swift */,
 				E874EB21277709760087E922 /* SceneDelegate.swift */,
-				E874EB23277709760087E922 /* ViewController.swift */,
-				E874EB25277709760087E922 /* Main.storyboard */,
+				E874EB23277709760087E922 /* StationSearchViewController.swift */,
+				E8EA467327799F7100DD4244 /* Scene */,
 				E874EB28277709780087E922 /* Assets.xcassets */,
 				E874EB2A277709780087E922 /* LaunchScreen.storyboard */,
 				E874EB2D277709780087E922 /* Info.plist */,
 			);
 			path = "ios-subway-station";
+			sourceTree = "<group>";
+		};
+		E8EA467327799F7100DD4244 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +92,10 @@
 			dependencies = (
 			);
 			name = "ios-subway-station";
+			packageProductDependencies = (
+				E8EA466E277997AD00DD4244 /* SnapKit */,
+				E8EA46712779981F00DD4244 /* Alamofire */,
+			);
 			productName = "ios-subway-station";
 			productReference = E874EB1C277709760087E922 /* ios-subway-station.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,10 @@
 				Base,
 			);
 			mainGroup = E874EB13277709760087E922;
+			packageReferences = (
+				E8EA466D277997AD00DD4244 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E8EA46702779981F00DD4244 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = E874EB1D277709760087E922 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +144,6 @@
 			files = (
 				E874EB2C277709780087E922 /* LaunchScreen.storyboard in Resources */,
 				E874EB29277709780087E922 /* Assets.xcassets in Resources */,
-				E874EB27277709760087E922 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E874EB24277709760087E922 /* ViewController.swift in Sources */,
+				E874EB24277709760087E922 /* StationSearchViewController.swift in Sources */,
 				E874EB20277709760087E922 /* AppDelegate.swift in Sources */,
 				E874EB22277709760087E922 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +163,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E874EB25277709760087E922 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E874EB26277709760087E922 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E874EB2A277709780087E922 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -217,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -292,9 +300,9 @@
 				DEVELOPMENT_TEAM = 9HJKFUTNXJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-subway-station/Info.plist";
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,9 +328,9 @@
 				DEVELOPMENT_TEAM = 9HJKFUTNXJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-subway-station/Info.plist";
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +368,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8EA466D277997AD00DD4244 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		E8EA46702779981F00DD4244 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8EA466E277997AD00DD4244 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8EA466D277997AD00DD4244 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E8EA46712779981F00DD4244 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8EA46702779981F00DD4244 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E874EB14277709760087E922 /* Project object */;
 }
