@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class StationDetailViewController: UIViewController {
     private lazy var refreshControl: UIRefreshControl = {
@@ -15,11 +16,6 @@ class StationDetailViewController: UIViewController {
         
         return refreshControle
     }()
-    
-    @objc func fetchData() {
-        print("REFRESH !")
-        refreshControl.endRefreshing()
-    }
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -45,6 +41,27 @@ class StationDetailViewController: UIViewController {
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints{ $0.edges.equalToSuperview() }
+        
+        fetchData()
+    }
+    
+    @objc private func fetchData() {
+        
+        
+        let stationName = "서울역"
+        let urlString = "http://swopenAPI.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/\(stationName.replacingOccurrences(of: "역", with: ""))"
+        AF
+            .request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "" )
+            .responseDecodable(of: StationArrivalDataResponseModel.self){[weak self] response in
+                self?.refreshControl.endRefreshing()
+                //클로저라 메모리 이슈가 있을 수 있기 때문에 weak를 해줘야함. 
+                
+                guard case .success(let data) = response.result else {return}
+                
+                print(data.realtimeArrivalList)
+                //여기에 endRefreshing이 오게되면 실패했을 때 멈추지 않는다.
+            }
+            .resume()
     }
 }
 
