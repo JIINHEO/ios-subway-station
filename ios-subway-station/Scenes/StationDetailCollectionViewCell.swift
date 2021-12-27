@@ -24,12 +24,14 @@ final class StationDetailCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func setup() {
+    func setup(with realTimeArrival: StationArrivalDataResponseModel.RealTimeArrival) {
         layer.cornerRadius = 12.0
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOpacity = 0.5
         layer.shadowRadius = 10
         
+        layer.borderColor = UIColor.label.cgColor
+        layer.borderWidth = 0.2
         
         backgroundColor = .systemBackground //쉐도우를 설정해도 기준값이 없기 때문에 잊지말고 설정해줘야함.
         
@@ -44,7 +46,7 @@ final class StationDetailCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(lineLabel.snp.bottom).offset(16.0)
             $0.bottom.equalToSuperview().inset(16.0)
         }
-        lineLabel.text = "왕십리-한양대방면"
-        remainTimeLabel.text = "뚝섬 도착"
+        lineLabel.text = realTimeArrival.line
+        remainTimeLabel.text = realTimeArrival.remainTime
     }
 }
